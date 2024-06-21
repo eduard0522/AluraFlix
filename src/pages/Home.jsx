@@ -1,27 +1,41 @@
 import { contextVideos } from "../components/Context/ContextVideos"
 import Group from "../components/Group"
-import NavMovil from "../components/Nav/NavMovil"
-import HeaderMovil from "../components/HeaderMovil"
 import { useContext } from "react"
-import useWindowDimensions from "../Hooks/useWindowDimensions"
 import ModalFormEdit from "../components/ModalForm/ModalForm"
-
-
+import BackgroundOpacity from "../components/BackgroundOpasity"
+import SelectedVideo from "../components/SelectedVideo"
+import { useRef } from "react";
+import useWindowDimensions from "../Hooks/useWindowDimensions"
 
 function  Home() {
   const{ grupos } = useContext(contextVideos)
-  const { width } = useWindowDimensions();
+  const{ openModalForm } = useContext(contextVideos)
+
+  const {width} = useWindowDimensions()
+
+  const videosDates = useRef(null)
+
+  const scrollToSection = (sectionRef) => {
+    if(width > 680 )  return sectionRef.current.scrollIntoView({ behavior: 'smooth' })
+  };
 
   return(
-    <main className="pt-8  bg-GrayColor-900 min-h-[100vh]  w-full">
-      <div className="w-full  px-4">
-           {grupos.map( grupo =>  <Group key={grupo.id} group={grupo} />)}
-      </div>
-      
+  <>
+    <main className="bg-GrayColor-900 min-h-[100vh]  w-full">
+          
+        {width > 620 &&  <SelectedVideo ref={videosDates}  />}
+
+        { openModalForm && <BackgroundOpacity/> }
+
+          <div className="w-full  px-4">
+              {grupos.map( grupo =>  <Group key={grupo.id} group={grupo}  scrollToSection={scrollToSection} videosDates={videosDates}/>)}
+          </div>
+    
         <ModalFormEdit />
-        { width < 620 && <NavMovil />}
     </main>
+  </>
     )
 }
+
 
 export default Home

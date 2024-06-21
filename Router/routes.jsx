@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../src/pages/Home";
 
-function Router() {
+function Router({children}) {
   return(
-    <BrowserRouter>
+    <BrowserRouter >
+      {children}
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>

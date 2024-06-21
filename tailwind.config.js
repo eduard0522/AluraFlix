@@ -31,6 +31,7 @@ export default {
         },
         BluePoyect:"#2271D1",
         BluePoyectDark:"#03122F",
+        BluePoyectOpasity:"#03122F70",
       },
       boxShadow:{
         "cardsFront": " inset 0px 0px 17px 8px #6BD1FF" ,

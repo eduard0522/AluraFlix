@@ -10,14 +10,27 @@ function ContextProviderVideos ({children}) {
   
   const [videos ,setVideos] = useState([])
   const [grupos ,setGrupos] = useState([])
+  const [openModalForm , setOpenModalForm] = useState(false)
+  const [selectedVideo, setSelectedVideo] = useState(null)
+ 
+  function ChangeStateModal() {
+    return setOpenModalForm(!openModalForm)
+  }
 
   useEffect(() => {
     setVideos(videosJson)  
-    setGrupos(gruposJson)      
+    setGrupos(gruposJson)
+
+    let defaultSelected = videosJson.find( video => video.id === 1)
+    let color = gruposJson.find( grupo => grupo.name === defaultSelected.group)
+    setSelectedVideo({...defaultSelected, color: color.color})
   },[])
 
+  function  updateSelectedVideo(video,color) {
+    return setSelectedVideo({...video, color: color})
+  }
   return(
-    <contextVideos.Provider value={{videos,setVideos,grupos}}  >
+    <contextVideos.Provider value={{videos,setVideos,grupos, openModalForm, ChangeStateModal,selectedVideo, updateSelectedVideo}}  >
         {children}
     </ contextVideos.Provider>
   )
