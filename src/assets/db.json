@@ -1,0 +1,46 @@
+{
+  "grupos":[
+    {
+      "id":1,
+      "name":"Front End",
+      "color":"#6BD1FF"
+    },
+    {
+      "id":2,
+      "name":"Back End",
+      "color":"#00C86F"
+    },
+    {
+      "id":3,
+      "name":"Innovación y gestión",
+      "color":"#FFBA05"
+    }
+  ],
+  "videos":[
+    {
+      "id":1,
+      "name":"Javascript",
+      "group":"Front End",
+      "image":"https://i.pinimg.com/originals/a9/95/63/a995634384bf179509c82723aa748af1.jpg"
+    },
+    {
+      "id":2,
+      "name":"NodeJs",
+      "group":"Back End",
+      "image":"https://i.pinimg.com/originals/a9/95/63/a995634384bf179509c82723aa748af1.jpg"
+    },
+    {
+      "id":3,
+      "name":"LinkedIn",
+      "group":"Innovación y gestión",
+      "image":"https://i.pinimg.com/originals/a9/95/63/a995634384bf179509c82723aa748af1.jpg"
+    },
+    {
+      "id":4,
+      "name":"CSS",
+      "group":"Front End",
+      "image":"https://i.pinimg.com/originals/a9/95/63/a995634384bf179509c82723aa748af1.jpg"
+    }
+  ]
+}
+
