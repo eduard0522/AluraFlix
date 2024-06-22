@@ -1,15 +1,14 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "../src/pages/Home";
+import { Routes, Route } from "react-router-dom";
 
-function Router({children}) {
+import Home from "../src/pages/Home";
+import AddVideo from "../src/pages/AddVideo";
+
+function Router() {
   return(
-    <BrowserRouter >
-      {children}
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/agregarvideo" element={<AddVideo />} />
+        </Routes>
   )
 }
-
 export default Router

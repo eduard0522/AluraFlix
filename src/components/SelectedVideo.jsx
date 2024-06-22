@@ -9,8 +9,7 @@ function  SelectedVideo(props,ref) {
       {if (video){
         return(
           <section  ref={ref} className="bg-[url('./fondo.png')]  w-full md:min-h-[40vh] lg:h-[100vh]  bg-cover bg-no-repeat relative flex items-center">
-
-             
+            
           <div className="absolute top-0 left-0 right-0 bottom-0 bg-BluePoyectOpasity "> </div>  
          
           <div className="w-full  lg:h-1/2  flex justify-evenly  relative  p-4">

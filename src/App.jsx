@@ -1,23 +1,25 @@
 import { ContextProviderVideos } from "../src/components/Context/ContextVideos";
 import Router from "../Router/routes"
-import useWindowDimensions from "./Hooks/useWindowDimensions";
-import HeaderMovil from "./components/HeaderMovil";
-import Header from "./components/Header";
-import NavMovil from "./components/Nav/NavMovil";
-import Footer from "./components/Footer";
+import useWindowDimensions from "../src/Hooks/useWindowDimensions";
+import HeaderMovil from "../src/components/HeaderMovil";
+import Header from "../src/components/Header";
+import NavMovil from "../src/components/Nav/NavMovil";
+import Footer from "../src/components/Footer";
+
 
 function App() {
+
   const{ width } = useWindowDimensions()
+
   return (
-    <>
         <ContextProviderVideos>
+        {width < 620 ? <HeaderMovil /> : <Header />}
           <Router>
-              {width < 620 ? <HeaderMovil /> : <Header />}
-              
+            
           </Router>
-        </ContextProviderVideos>
+
         { width < 620 ? <NavMovil /> : < Footer />} 
-    </>
+        </ContextProviderVideos>
   )
 }
 
