@@ -1,17 +1,31 @@
 import { createContext, useState, useEffect } from "react";
 
 import data from '../../assets/db.json';
+import { getGroups } from "../../api/groups.js";
 
 const contextVideos = createContext()
 
 function ContextProviderVideos ({children}) {
   let videosJson = data.videos;
-  let gruposJson = data.grupos
-  
+
+
+  let gruposJson =  async () => {
+      try {
+        let grupos = await getGroups()
+        setGrupos(grupos);
+        setLoading(false)
+        return grupos;
+      } catch (error) {
+        console.log(error)
+      }
+  }
+
+
   const [videos ,setVideos] = useState([])
   const [grupos ,setGrupos] = useState([])
   const [openModalForm , setOpenModalForm] = useState(false)
   const [selectedVideo, setSelectedVideo] = useState(null)
+  const [loading, setLoading] = useState(true)
  
   function ChangeStateModal() {
     return setOpenModalForm(!openModalForm)
@@ -19,12 +33,16 @@ function ContextProviderVideos ({children}) {
 
   useEffect(() => {
     setVideos(videosJson)  
-    setGrupos(gruposJson)
+    gruposJson();
+  },[]);
 
-    let defaultSelected = videosJson.find( video => video.id === 1)
-    let color = gruposJson.find( grupo => grupo.name === defaultSelected.group)
-    setSelectedVideo({...defaultSelected, color: color.color})
-  },[])
+  useEffect( () => {
+    if( !loading ){
+
+      let defaultSelected = grupos[0]
+      setSelectedVideo({...defaultSelected, color: defaultSelected.color});
+    }
+  },[loading])
 
   function  updateSelectedVideo(video,color) {
     return setSelectedVideo({...video, color: color})

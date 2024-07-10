@@ -14,7 +14,7 @@ function SelectForm({titulo,opciones,color}) {
           className="w-full rounded-xl  border-2  bg-transparent px-4 py-2 text-gray-300 outline-none"
           style={{ borderColor:`${color}`}}
         >
-            { opciones.map(opcion => <option key={opcion.id} value={opcion.name} className="bg-BluePoyectDark"> {opcion.name } </option>)} 
+            { opciones.map(opcion => <option key={opcion._id} value={opcion.name} className="bg-BluePoyectDark"> {opcion.name } </option>)} 
         </select>
     </div>
   )

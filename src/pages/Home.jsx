@@ -25,7 +25,7 @@ function  Home() {
         { width > 620 &&  <SelectedVideo ref={videosDates}  /> }
         { openModalForm && <BackgroundOpacity/> }
         <div className="w-full  px-4 py-8">
-            {grupos.map( grupo =>  <Group key={grupo.id} group={grupo}  scrollToSection={scrollToSection} videosDates={videosDates}/>)}
+            {grupos.map( grupo =>  <Group key={grupo._id} group={grupo}  scrollToSection={scrollToSection} videosDates={videosDates}/>)}
         </div>
         <ModalFormEdit />
     </main>
