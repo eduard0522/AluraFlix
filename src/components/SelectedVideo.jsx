@@ -24,7 +24,7 @@ function  SelectedVideo(props,ref) {
           </div>
         </section>
        ) }else{
-        return <h1> No hay video seleccionado</h1>
+        return <h2 className="text-white text-2xl"> No hay video seleccionado</h2>
       }
        
       }

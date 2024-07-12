@@ -18,28 +18,24 @@
   ],
   "videos":[
     {
-      "id":1,
       "name":"Javascript",
       "group":"Front End",
       "image":"https://i.pinimg.com/originals/a9/95/63/a995634384bf179509c82723aa748af1.jpg",
       "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, consequuntur cupiditate adipisci corporis dolor, porro nihil, accusamus qui sunt illum ut itaque. Numquam quisquam molestiae saepe temporibus assumenda adipisci eum!"
     },
     {
-      "id":2,
       "name":"NodeJs",
       "group":"Back End",
       "image":"https://i.pinimg.com/originals/a9/95/63/a995634384bf179509c82723aa748af1.jpg",
       "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, consequuntur cupiditate adipisci corporis dolor, porro nihil, accusamus qui sunt illum ut itaque. Numquam quisquam molestiae saepe temporibus assumenda adipisci eum!"
     },
     {
-      "id":3,
       "name":"LinkedIn",
       "group":"Innovación y gestión",
       "image":"https://i.pinimg.com/originals/a9/95/63/a995634384bf179509c82723aa748af1.jpg",
       "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, consequuntur cupiditate adipisci corporis dolor, porro nihil, accusamus qui sunt illum ut itaque. Numquam quisquam molestiae saepe temporibus assumenda adipisci eum!"
     },
     {
-      "id":4,
       "name":"CSS",
       "group":"Front End",
       "image":"https://i.pinimg.com/originals/a9/95/63/a995634384bf179509c82723aa748af1.jpg",

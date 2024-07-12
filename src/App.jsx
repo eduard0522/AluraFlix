@@ -13,13 +13,13 @@ function App() {
 
   return (
         <ContextProviderVideos>
-        {width < 620 ? <HeaderMovil /> : <Header />}
-          <Router>
-            
-          </Router>
+          {width < 620 ? <HeaderMovil /> : <Header />}
+            <Router>
+              
+            </Router>
 
-        { width < 620 ? <NavMovil /> : < Footer />} 
-        </ContextProviderVideos>
+          { width < 620 ? <NavMovil /> : < Footer />} 
+          </ContextProviderVideos>
   )
 }
 
