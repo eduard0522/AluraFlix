@@ -48,6 +48,7 @@ export const updateVideoRequest =  async (id, data) => {
 export const deleteVideo = async (id) => {
   try {
     const deleteVideo = await axios.delete(`/api/${id}`);
+    console.log(deleteVideo)
     return deleteVideo.data
   } catch (error) {
     return error
