@@ -1,7 +1,7 @@
-function ButtonShadowBlue({text, type = "button"}) {
+function ButtonShadowBlue({text, type = "button"}) { 
   return(
     <button type={ type } 
-    className=" py-2 px-12 rounded-xl bg-transparent border-4 border-BluePoyect text-BluePoyect shadow-[inset_0_0_10px_0px_#2271D1]">
+    className=" py-2 px-12 rounded-xl bg-transparent border-4 border-BluePoyect text-BluePoyect shadow-[inset_0_0_10px_0px_#2271D1]  hover:bg-BluePoyect hover:text-white">
       {text}
     </button>
   )

@@ -18,7 +18,7 @@ function  SelectedVideo(props,ref) {
                 <h2 className="  text-3xl lg:text-5xl font-bold"> { video.name}</h2>
                 <p className=" lg:text-xl"> {video.description} </p>
               </div>
-              <div className="border-4  sm:w-[400px] lg:w-[500px]  lg:h-[350px]  rounded-xl bg-cover bg-no-repeat" 
+              <div className="border-4  sm:w-[400px] lg:w-[500px]    rounded-xl bg-cover bg-no-repeat" 
                   style={{backgroundImage:`url(${video.image})`,  borderColor:`${video.color}`, boxShadow:`inset 0px 0px 17px 8px ${video.color} `}}>
               </div>
           </div>

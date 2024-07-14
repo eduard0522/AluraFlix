@@ -3,7 +3,6 @@ import { contextVideos } from "../components/Context/ContextVideos";
 import { useForm , Controller} from "react-hook-form";
 import { createVideo } from "../api/videos.js";
 
-
 import InputAdd from "../components/ModalForm/InputAdd";
 import SelectForm from "../components/ModalForm/SelectForm";
 import TextArea from '../components/ModalForm/TexttArea' 
@@ -63,14 +62,14 @@ function FormAddVideo() {
           render={({ field }) => 
             <InputAdd  {...field}  error={errors.name} placeholder="Ingrese un título"  label="Título"/>
           }>
+            
         </Controller>
     
       <Controller
           name="group"
           control={control}
           rules={{required:" El campo grupo es requerido", minLength: {value:3, message: "El campo grupo debe contener minimo 3 caracteres." } }} 
-          defaultValue=""
-
+          defaultValue="Back End"
           render={({ field }) =>
         <SelectForm label="Grupo" opciones={ grupos } color="#e5dddd"  {...field}  error={errors.group}/>
         }>

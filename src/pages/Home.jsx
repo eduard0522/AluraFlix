@@ -10,8 +10,7 @@ import useWindowDimensions from "../Hooks/useWindowDimensions"
 
 
 function  Home() {
-  const{ grupos } = useContext(contextVideos)
-  const{ openModalForm } = useContext(contextVideos)
+  const{ grupos,openModalForm } = useContext(contextVideos)
   const {width} = useWindowDimensions()
   const videosDates = useRef(null)
 
@@ -27,7 +26,10 @@ function  Home() {
         <div className="w-full  px-4 py-8">
             {grupos.map( grupo =>  <Group key={grupo._id} group={grupo}  scrollToSection={scrollToSection} videosDates={videosDates}/>)}
         </div>
-        <ModalFormEdit />
+
+        { openModalForm && <ModalFormEdit/> }
+
+
     </main>
   </>
     )

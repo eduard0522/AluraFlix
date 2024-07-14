@@ -11,6 +11,17 @@ export const getVideos =  async () => {
   }
 }
 
+export const getVideo =  async (id) => {
+
+  try {
+    const video = await axios.get(`/${id}`);
+    if(!video)   throw new Error("An unexpected error ocurred.");
+    return video.data
+  } catch (error) {
+    return error
+  }
+} 
+
 export const createVideo = async (data) => {
   try {
     const video = await axios.post("/",data);
@@ -20,6 +31,19 @@ export const createVideo = async (data) => {
     return error.response
   }
 }
+
+export const updateVideoRequest =  async (id, data) => {
+  try {
+    const video  = await axios.put(`/${id}`, data);
+    if( video.status === 404){
+      return video
+    }
+    return video
+  } catch (error) {
+    return error
+  }
+}
+
 
 export const deleteVideo = async (id) => {
   try {

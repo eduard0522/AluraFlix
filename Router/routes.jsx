@@ -7,6 +7,7 @@ function Router() {
   return(
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/:id" element={<Home />} />
           <Route path="/agregarvideo" element={<AddVideo />} />
         </Routes>
   )
