@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://localhost:9876/",
+  baseURL: "https://alura-flix-back.vercel.app/",
   withCredentials : true
 });
 
